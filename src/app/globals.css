@@ -8,6 +8,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Dodane globalne zmienne kolorów */
+  --background-primary: #F3F3F3;
+  --background-secondary: #EDEDED;
+  --button-primary: #00A53D;
+  --button-hover: #008236;
+  --text-black: #001160;
+  --text-gray: #001750;
+  --text-light-gray: #9BA3AF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,27 +34,27 @@ body {
 
 /* Style dla placeholderów w formularzach */
 ::placeholder {
-  color: #9ca3af; /* Jasnoszary kolor dla lepszej widoczności */
+  color: var(--text-light-gray); /* Zaktualizowano na zmienną */
   opacity: 1; /* Pełna nieprzezroczystość */
 }
 
 /* Wsparcie dla różnych przeglądarek */
 ::-webkit-input-placeholder {
-  color: #9ca3af;
+  color: var(--text-light-gray);
   opacity: 1;
 }
 
 ::-moz-placeholder {
-  color: #9ca3af;
+  color: var(--text-light-gray);
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #9ca3af;
+  color: var(--text-light-gray);
   opacity: 1;
 }
 
 :-moz-placeholder {
-  color: #9ca3af;
+  color: var(--text-light-gray);
   opacity: 1;
 }

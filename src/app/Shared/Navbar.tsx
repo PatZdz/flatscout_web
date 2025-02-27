@@ -29,25 +29,25 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-8">
-          <Link href="/o-nas" className="text-gray-700 hover:text-green-600 transition-colors font-medium">
+          <Link href="/o-nas" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             O Nas
           </Link>
-          <Link href="/uslugi" className="text-gray-700 hover:text-green-600 transition-colors font-medium">
+          <Link href="/uslugi" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             Usługi
           </Link>
-          <Link href="/renta-dozywotnia" className="text-gray-700 hover:text-green-600 transition-colors font-medium">
+          <Link href="/renta-dozywotnia" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             Renta Dożywotnia
           </Link>
-          <Link href="/wycena" className="text-gray-700 hover:text-green-600 transition-colors font-medium">
+          <Link href="/wycena" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             Wycena
           </Link>
-          <Link href="/blog" className="text-gray-700 hover:text-green-600 transition-colors font-medium">
+          <Link href="/blog" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             Blog
           </Link>
-          <Link href="/faq" className="text-gray-700 hover:text-green-600 transition-colors font-medium">
+          <Link href="/faq" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             FAQ
           </Link>
-          <Link href="/kontakt" className="text-gray-700 hover:text-green-600 transition-colors font-medium">
+          <Link href="/kontakt" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             Kontakt
           </Link>
         </div>
@@ -56,7 +56,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center">
           <a 
             href="tel:+48530190880" 
-            className="flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors"
+            className="flex items-center text-[var(--button-primary)] font-semibold hover:text-[var(--button-hover)] transition-colors"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -84,7 +84,7 @@ const Navbar = () => {
         >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6 text-gray-700" 
+            className="h-6 w-6 text-[var(--text-gray)]" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
@@ -115,56 +115,56 @@ const Navbar = () => {
         <div className="flex flex-col space-y-4 px-6">
           <Link 
             href="/o-nas" 
-            className="text-gray-700 hover:text-green-600 py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             O Nas
           </Link>
           <Link 
             href="/uslugi" 
-            className="text-gray-700 hover:text-green-600 py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Usługi
           </Link>
           <Link 
             href="/renta-dozywotnia" 
-            className="text-gray-700 hover:text-green-600 py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Renta Dożywotnia
           </Link>
           <Link 
             href="/wycena" 
-            className="text-gray-700 hover:text-green-600 py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Wycena
           </Link>
           <Link 
             href="/blog" 
-            className="text-gray-700 hover:text-green-600 py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Blog
           </Link>
           <Link 
             href="/faq" 
-            className="text-gray-700 hover:text-green-600 py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             FAQ
           </Link>
           <Link 
             href="/kontakt" 
-            className="text-gray-700 hover:text-green-600 py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Kontakt
           </Link>
           <a 
             href="tel:+48530190880" 
-            className="flex items-center text-green-600 font-semibold py-2"
+            className="flex items-center text-[var(--button-primary)] font-semibold py-2"
             onClick={() => setIsMenuOpen(false)}
           >
             <svg 

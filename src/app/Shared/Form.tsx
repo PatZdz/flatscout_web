@@ -56,11 +56,11 @@ const Form = ({ onSubmit }: FormProps) => {
   };
 
   return (
-    <div className="w-full bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-6 md:p-8">
-      <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">Wypełnij formularz kontaktowy</h3>
+    <div className="w-full bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-4 md:p-6">
+      <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">Wypełnij formularz kontaktowy</h3>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
             <input
               type="text"
@@ -68,7 +68,7 @@ const Form = ({ onSubmit }: FormProps) => {
               placeholder="Imię"
               value={formData.imie}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)] focus:border-transparent"
               required
             />
           </div>
@@ -79,7 +79,7 @@ const Form = ({ onSubmit }: FormProps) => {
               placeholder="Nazwisko"
               value={formData.nazwisko}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)] focus:border-transparent"
               required
             />
           </div>
@@ -91,28 +91,35 @@ const Form = ({ onSubmit }: FormProps) => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)] focus:border-transparent"
           required
         />
         
         <div>
-          <label htmlFor="rodzajNieruchomosci" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="rodzajNieruchomosci" className="block text-xs font-medium text-[var(--text-gray)] mb-1">
             Rodzaj nieruchomości
           </label>
-          <select
-            id="rodzajNieruchomosci"
-            name="rodzajNieruchomosci"
-            value={formData.rodzajNieruchomosci}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-            required
-          >
+          <div className="relative">  
+            <select
+              id="rodzajNieruchomosci"
+              name="rodzajNieruchomosci"
+              value={formData.rodzajNieruchomosci}
+              onChange={handleChange}
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)] focus:border-transparent text-gray-800 appearance-none pr-10"
+              required
+            >
             <option value="Mieszkanie">Mieszkanie</option>
             <option value="Dom">Dom</option>
-            <option value="Działka">Działka</option>
-            <option value="Lokal użytkowy">Lokal użytkowy</option>
+            <option value="Grunt">Grunt</option>
+            <option value="Udział">Udział</option>
             <option value="Inne">Inne</option>
-          </select>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
+              <svg className="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
         </div>
         
         <input
@@ -121,7 +128,7 @@ const Form = ({ onSubmit }: FormProps) => {
           placeholder="Telefon"
           value={formData.telefon}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)] focus:border-transparent"
           required
         />
         
@@ -131,7 +138,7 @@ const Form = ({ onSubmit }: FormProps) => {
           placeholder="Lokalizacja"
           value={formData.lokalizacja}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)] focus:border-transparent"
           required
         />
         
@@ -141,7 +148,7 @@ const Form = ({ onSubmit }: FormProps) => {
           placeholder="Metraż"
           value={formData.metraz}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)] focus:border-transparent"
           required
         />
         
@@ -150,8 +157,8 @@ const Form = ({ onSubmit }: FormProps) => {
           placeholder="Dodatkowe informacje np. stan nieruchomości, piętro, oczekiwana cena..."
           value={formData.dodatkoweInfo}
           onChange={handleChange}
-          rows={4}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
+          rows={2}
+          className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
         />
         
         <div className="flex items-start">
@@ -161,21 +168,21 @@ const Form = ({ onSubmit }: FormProps) => {
             name="zgodaMarketing"
             checked={formData.zgodaMarketing}
             onChange={handleCheckboxChange}
-            className="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+            className="mt-1 h-4 w-4 text-[var(--button-primary)] focus:ring-[var(--button-primary)] border-gray-300 rounded"
             required
           />
-          <label htmlFor="zgodaMarketing" className="ml-2 block text-sm text-gray-700">
+          <label htmlFor="zgodaMarketing" className="ml-2 block text-xs text-[var(--text-gray)]">
             Wyrażam zgodę na przetwarzanie moich danych osobowych oraz otrzymywanie e-maili marketingowych.
-            <a href="/polityka-prywatnosci" className="text-green-600 hover:text-green-800 ml-1">Zobacz Politykę Prywatności więcej informacji.</a>
+            <a href="/polityka-prywatnosci" className="text-[var(--button-primary)] hover:text-[var(--button-hover)] ml-1">Zobacz Politykę Prywatności więcej informacji.</a>
           </label>
         </div>
         
         <button
           type="submit"
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center"
+          className="w-full bg-[var(--button-primary)] hover:bg-[var(--button-hover)] text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center"
         >
           Wyślij
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
         </button>

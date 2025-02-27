@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-green-600 to-green-800 overflow-hidden">
+    <section className="relative w-full min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-[var(--button-primary)] to-[var(--button-hover)] overflow-hidden">
       {/* Dekoracyjne elementy tła */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-white"></div>

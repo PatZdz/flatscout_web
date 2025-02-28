@@ -16,7 +16,7 @@ const OurServices = () => {
           {/* Usługi w nowoczesnym układzie */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Usługa 1 */}
-            <div className="flex flex-col items-center text-center" data-aos="fade-up">
+            <div className="flex flex-col items-center text-center">
               <div className="bg-[var(--icon-bg)] p-6 rounded-full mb-6">
                 <FaClock className="text-[var(--button-primary)] text-4xl" aria-hidden="true" />
               </div>
@@ -30,7 +30,7 @@ const OurServices = () => {
             </div>
 
             {/* Usługa 2 */}
-            <div className="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <div className="flex flex-col items-center text-center">
               <div className="bg-[var(--icon-bg)] p-6 rounded-full mb-6">
                 <FaEnvelope className="text-[var(--button-primary)] text-4xl" aria-hidden="true" />
               </div>
@@ -45,7 +45,7 @@ const OurServices = () => {
             </div>
 
             {/* Usługa 3 */}
-            <div className="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+            <div className="flex flex-col items-center text-center">
               <div className="bg-[var(--icon-bg)] p-6 rounded-full mb-6">
                 <FaUserTie className="text-[var(--button-primary)] text-4xl" aria-hidden="true" />
               </div>

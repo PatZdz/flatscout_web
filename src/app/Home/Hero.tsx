@@ -20,7 +20,7 @@ const Hero = () => {
           priority 
           className="object-cover" 
         />
-        <div className="absolute inset-0 bg-black opacity-35"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
 

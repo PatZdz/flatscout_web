@@ -14,9 +14,10 @@
   --background-secondary: #EDEDED;
   --button-primary: #00A53D;
   --button-hover: #008236;
-  --text-black: #001160;
-  --text-gray: #001750;
-  --text-light-gray: #9BA3AF;
+  --text-black: #101010;
+  --text-gray: #424242;
+  --text-light-gray: #a3a3a3;
+  --icon-bg: rgba(0, 165, 61, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {

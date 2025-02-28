@@ -10,17 +10,24 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[700px] bg-gradient-to-br from-[var(--button-primary)] to-[var(--button-hover)] overflow-hidden">
-      {/* Dekoracyjne elementy tła */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-white"></div>
-        <div className="absolute bottom-20 right-20 w-60 h-60 rounded-full bg-white"></div>
-        <div className="absolute top-1/2 left-1/3 w-20 h-20 rounded-full bg-white"></div>
+    <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden">
+      {/* Tło - zdjęcie */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/images/hero.jpg" 
+          alt="Tło strony głównej" 
+          fill 
+          priority 
+          className="object-cover" 
+        />
+        <div className="absolute inset-0 bg-black opacity-35"></div>
       </div>
+      
+
       
       <div className="container mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center justify-between relative z-10">
         {/* Lewa strona - tekst */}
-        <div className="w-full md:w-1/2 mb-10 md:mb-0 text-white">
+        <div className="w-full md:w-1/2 mb-10 md:mb-0 text-white text-center md:text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Skup nieruchomości w całej Polsce za gotówkę
           </h1>

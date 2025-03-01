@@ -14,13 +14,13 @@ const Hero = () => {
       {/* Tło - zdjęcie */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/hero.jpg" 
+          src="/images/hero.webp" 
           alt="Tło strony głównej" 
           fill 
           priority 
           className="object-cover" 
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
       
 

@@ -1,18 +1,53 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      const currentScrollY = window.scrollY;
+      
+      // Zawsze pokazuj navbar na górze strony
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else {
+        // Ukryj przy scrollowaniu w dół, pokaż przy scrollowaniu w górę
+        setIsVisible(currentScrollY < lastScrollY);
+      }
+      
+      // Zamknij menu mobilne przy scrollowaniu
+      if (isMenuOpen && Math.abs(currentScrollY - lastScrollY) > 10) {
+        setIsMenuOpen(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY, isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm py-4 px-4 md:px-8 lg:px-12">
+    <nav className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm py-4 px-4 md:px-8 lg:px-12 transition-transform duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -112,59 +147,59 @@ const Navbar = () => {
       <div 
         className={`lg:hidden absolute left-0 right-0 bg-white shadow-md transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-screen py-4' : 'max-h-0'}`}
       >
-        <div className="flex flex-col space-y-4 px-6">
+        <div className="flex flex-col space-y-4 px-6 items-center text-center">
           <Link 
             href="/o-nas" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             O Nas
           </Link>
           <Link 
             href="/uslugi" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             Usługi
           </Link>
           <Link 
             href="/renta-dozywotnia" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             Renta Dożywotnia
           </Link>
           <Link 
             href="/wycena" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             Wycena
           </Link>
           <Link 
             href="/blog" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             Blog
           </Link>
           <Link 
             href="/faq" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             FAQ
           </Link>
           <Link 
             href="/kontakt" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium"
+            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             Kontakt
           </Link>
           <a 
             href="tel:+48530190880" 
-            className="flex items-center text-[var(--button-primary)] font-semibold py-2"
+            className="flex items-center justify-center text-[var(--button-primary)] font-semibold py-2 w-full"
             onClick={() => setIsMenuOpen(false)}
           >
             <svg 

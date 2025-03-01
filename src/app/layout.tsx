@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from './Shared/Navbar';
+import Footer from './Shared/Footer';
+import ContactForm from './Shared/ContactForm';
+import CookieBanner from './Shared/CookieBanner';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +32,11 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <ContactForm />
+        <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

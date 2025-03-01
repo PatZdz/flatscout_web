@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +10,9 @@ const Footer = () => {
   return (
     <footer className="bg-white border-t border-gray-200 pt-12 pb-8">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
           {/* Column 1: Logo and Company Info */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center md:items-start md:col-span-6 lg:col-span-7">
             <Link href="/" className="mb-4 inline-block">
               <div className="relative h-10 w-48">
                 <Image 
@@ -23,7 +23,7 @@ const Footer = () => {
                 />
               </div>
             </Link>
-            <p className="text-[var(--text-gray)] mb-4 max-w-xs">
+            <p className="text-[var(--text-gray)] mb-4 max-w-xs text-center md:text-left">
               Profesjonalny skup nieruchomości za gotówkę w całej Polsce. Szybka wycena, bezpieczna transakcja i płatność gotówką w ciągu 24h.
             </p>
             <div className="space-y-2">
@@ -35,17 +35,13 @@ const Footer = () => {
                 <FaEnvelope className="mr-2" />
                 kontakt@flatscout.pl
               </a>
-              <div className="flex items-start text-[var(--text-gray)]">
-                <FaMapMarkerAlt className="mr-2 mt-1 flex-shrink-0" />
-                <span>ul. Przykładowa 123<br />00-001 Warszawa</span>
-              </div>
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold text-[var(--text-black)] mb-4">Usługi</h3>
-            <ul className="space-y-2">
+          <div className="flex flex-col items-center md:items-start md:col-span-3 lg:col-span-3">
+            <h3 className="text-lg font-semibold text-[var(--text-black)] mb-4 text-center md:text-left">Usługi</h3>
+            <ul className="space-y-2 text-center md:text-left">
               <li>
                 <Link href="/skup-nieruchomosci-komercyjnych" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors">
                   Skup nieruchomości komercyjnych
@@ -90,9 +86,9 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Information */}
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold text-[var(--text-black)] mb-4">Informacje</h3>
-            <ul className="space-y-2">
+          <div className="flex flex-col items-center md:items-start md:col-span-3 lg:col-span-2">
+            <h3 className="text-lg font-semibold text-[var(--text-black)] mb-4 text-center md:text-left">Informacje</h3>
+            <ul className="space-y-2 text-center md:text-left">
               <li>
                 <Link href="/kontakt" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors">
                   Kontakt
@@ -120,10 +116,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-[var(--text-gray)] mb-4 md:mb-0">
+            <p className="text-sm text-[var(--text-gray)] mb-4 md:mb-0 text-center md:text-left w-full md:w-auto">
               © {currentYear} FlatScout. Wszelkie prawa zastrzeżone.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-end w-full md:w-auto">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />

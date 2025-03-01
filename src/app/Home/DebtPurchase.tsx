@@ -55,7 +55,7 @@ const DebtPurchase = () => {
           
           <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="/images/debt.jpg"
+              src="/images/debt.webp"
               alt="Skup nieruchomości zadłużonych"
               fill
               className="object-cover"

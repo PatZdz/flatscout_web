@@ -1,6 +1,6 @@
 'use client';
 
-import Form, { FormData } from '../Shared/Form';
+import Form, { FormData } from './Form';
 import Link from 'next/link';
 
 interface ContactFormProps {

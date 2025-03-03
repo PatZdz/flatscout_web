@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
@@ -33,15 +34,38 @@ const Navbar = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
+      
+      // Close services menu when clicking outside
+      const handleClickOutside = (event: MouseEvent) => {
+        const target = event.target as HTMLElement;
+        const servicesButton = target.closest('button');
+        const servicesMenu = target.closest('.services-menu');
+        
+        // Only close if click is outside both the button and menu
+        if (!servicesButton && !servicesMenu && isServicesMenuOpen) {
+          setIsServicesMenuOpen(false);
+        }
+      };
+      
+      document.addEventListener('mousedown', handleClickOutside);
 
       return () => {
         window.removeEventListener('scroll', controlNavbar);
+        document.removeEventListener('mousedown', handleClickOutside);
       };
     }
-  }, [lastScrollY, isMenuOpen]);
+  }, [lastScrollY, isMenuOpen, isServicesMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleServicesMenu = () => {
+    setIsServicesMenuOpen(!isServicesMenuOpen);
+  };
+  
+  const closeServicesMenu = () => {
+    setIsServicesMenuOpen(false);
   };
 
   return (
@@ -67,9 +91,83 @@ const Navbar = () => {
           <Link href="/o-nas" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             O Nas
           </Link>
-          <Link href="/uslugi" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
-            Usługi
-          </Link>
+          <div className="relative group">
+            <button 
+              onClick={toggleServicesMenu}
+              className="flex items-center text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium focus:outline-none"
+            >
+              Usługi
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className={`h-4 w-4 ml-1 transition-transform ${isServicesMenuOpen ? 'rotate-180' : ''}`} 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isServicesMenuOpen && (
+              <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg py-2 z-50 services-menu">
+                <Link 
+                  href="/skup-nieruchomosci-komercyjnych" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Nieruchomości Komercyjnych
+                </Link>
+                <Link 
+                  href="/skup-udzialow-w-nieruchomosci" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Udziałów W Nieruchomości
+                </Link>
+                <Link 
+                  href="/skup-nieruchomosci-spadkowych" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Nieruchomości Spadkowych
+                </Link>
+                <Link 
+                  href="/skup-nieruchomosci-z-lokatorem" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Nieruchomości Z Lokatorem
+                </Link>
+                <Link 
+                  href="/skup-mieszkan" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Mieszkań
+                </Link>
+                <Link 
+                  href="/skup-kamienic" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Kamienic
+                </Link>
+                <Link 
+                  href="/skup-gruntow" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Gruntów
+                </Link>
+                <Link 
+                  href="/skup-domow" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:bg-[var(--background-secondary)] hover:text-[var(--button-primary)]"
+                  onClick={closeServicesMenu}
+                >
+                  Skup Domów
+                </Link>
+              </div>
+            )}
+          </div>
           <Link href="/renta-dozywotnia" className="text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors font-medium">
             Renta Dożywotnia
           </Link>
@@ -91,7 +189,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center">
           <a 
             href="tel:+48530190880" 
-            className="flex items-center text-[var(--button-primary)] font-semibold hover:text-[var(--button-hover)] transition-colors"
+            className="flex items-center bg-[var(--button-primary)] text-white font-semibold hover:bg-[var(--button-hover)] transition-colors px-4 py-2 rounded-lg"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -155,13 +253,85 @@ const Navbar = () => {
           >
             O Nas
           </Link>
-          <Link 
-            href="/uslugi" 
-            className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Usługi
-          </Link>
+          <div className="w-full">
+            <button 
+              className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full text-center flex items-center justify-center"
+              onClick={() => {
+                setIsServicesMenuOpen(!isServicesMenuOpen);
+              }}
+            >
+              Usługi
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className={`h-4 w-4 ml-1 transition-transform ${isServicesMenuOpen ? 'rotate-180' : ''}`} 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isServicesMenuOpen && (
+              <div className="bg-[var(--background-secondary)] py-2 mt-1 rounded-md services-menu">
+                <Link 
+                  href="/skup-nieruchomosci-komercyjnych" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Nieruchomości Komercyjnych
+                </Link>
+                <Link 
+                  href="/skup-udzialow-w-nieruchomosci" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Udziałów W Nieruchomości
+                </Link>
+                <Link 
+                  href="/skup-nieruchomosci-spadkowych" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Nieruchomości Spadkowych
+                </Link>
+                <Link 
+                  href="/skup-nieruchomosci-z-lokatorem" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Nieruchomości Z Lokatorem
+                </Link>
+                <Link 
+                  href="/skup-mieszkan" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Mieszkań
+                </Link>
+                <Link 
+                  href="/skup-kamienic" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Kamienic
+                </Link>
+                <Link 
+                  href="/skup-gruntow" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Gruntów
+                </Link>
+                <Link 
+                  href="/skup-domow" 
+                  className="block px-4 py-2 text-[var(--text-gray)] hover:text-[var(--button-primary)] text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skup Domów
+                </Link>
+              </div>
+            )}
+          </div>
           <Link 
             href="/renta-dozywotnia" 
             className="text-[var(--text-gray)] hover:text-[var(--button-primary)] py-2 transition-colors font-medium w-full"
@@ -199,7 +369,7 @@ const Navbar = () => {
           </Link>
           <a 
             href="tel:+48530190880" 
-            className="flex items-center justify-center text-[var(--button-primary)] font-semibold py-2 w-full"
+            className="flex items-center justify-center bg-[var(--button-primary)] text-white font-semibold hover:bg-[var(--button-hover)] transition-colors px-4 py-2 rounded-lg w-full mx-4"
             onClick={() => setIsMenuOpen(false)}
           >
             <svg 

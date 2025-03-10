@@ -6,7 +6,7 @@ const Text_2 = () => {
       <div className="container mx-auto px-4">
         <header className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-black)] mb-4">
-            Wycena w biurze skupu nieruchomości – Towarzystwo Mieszkaniowe
+            Jak przebiega proces skupu mieszkań w FlatScout?
           </h2>
           <div className="w-16 h-1 bg-[var(--button-primary)] mx-auto mb-6"></div>
         </header>
@@ -14,30 +14,57 @@ const Text_2 = () => {
         <div className="max-w-5xl mx-auto space-y-6 text-[var(--text-gray)]" itemScope itemType="https://schema.org/Article">
           <div itemProp="articleBody">
             <p className="leading-relaxed mb-6">
-              Chcesz sprzedać mieszkanie, ale nie wiesz, jak je wycenić? Zgłoś się do biura skupu Towarzystwo Mieszkaniowe. 
-              Nie tylko wycenimy Twoje mieszkanie, ale otrzymasz od nas również ofertę zakupu nieruchomości w atrakcyjnej cenie.
+              Chcesz sprzedać mieszkanie szybko i bez zbędnych formalności? Skorzystaj z usługi skupu mieszkań FlatScout. 
+              Oferujemy uczciwe warunki, konkurencyjne ceny i profesjonalną obsługę na każdym etapie transakcji.
             </p>
             
             <div className="mb-6">
-              <h3 className="text-xl font-semibold mb-4 text-[var(--text-black)]">Elementy wpływające na wycenę nieruchomości:</h3>
+              <h3 className="text-xl font-semibold mb-4 text-[var(--text-black)]">Czynniki, które uwzględniamy przy wycenie mieszkania:</h3>
               <ul className="list-disc list-inside space-y-2">
-                <li>rodzaj nieruchomości, czyli np. dom, mieszkanie</li>
-                <li>lokalizacja – duże czy małe miasto, popularna dzielnica itd.</li>
-                <li>przeznaczenie nieruchomości</li>
-                <li>powierzchnia użytkowa</li>
-                <li>standard wykończenia</li>
-                <li>stan techniczny lokalu, czy np. konieczny jest generalny remont, czy wystarczy home staging i delikatny „lifting" mieszkania</li>
-                <li>aktualna sytuacja na rynku nieruchomości</li>
-                <li>plany zagospodarowania przestrzennego okolicy</li>
-                <li>stan prawny nieruchomości, np. mieszkanie z księgą wieczystą lub bez księgi, prawo dożywocia</li>
-                <li>ewentualne obciążenia nieruchomości, czyli hipoteka, komornik</li>
+                <li>lokalizacja – dzielnica, dostęp do komunikacji, infrastruktura</li>
+                <li>metraż i układ pomieszczeń</li>
+                <li>piętro i liczba kondygnacji w budynku</li>
+                <li>rok budowy i stan techniczny budynku</li>
+                <li>standard wykończenia mieszkania</li>
+                <li>stan prawny nieruchomości</li>
+                <li>potencjalne obciążenia (hipoteka, zadłużenie)</li>
+                <li>aktualna sytuacja na lokalnym rynku nieruchomości</li>
               </ul>
             </div>
             
             <p className="leading-relaxed mb-6">
-              Jeżeli zdecydujesz się wysłać do nas zgłoszenie, to wycenimy Twoje mieszkanie za darmo. Nasze wszystkie usługi są bezpłatne. 
-              Wycena, którą przygotujemy, będzie rzetelna i dokładna, ponieważ mamy dużą wiedzę na temat sytuacji na polskim i lokalnym 
-              rynku nieruchomości, wiemy jakie elementy wpływają na wycenę oraz mamy dostęp do cen transakcyjnych.
+              Nasza wycena jest zawsze bezpłatna i niezobowiązująca. Dzięki doświadczeniu i znajomości rynku nieruchomości, 
+              jesteśmy w stanie zaoferować konkurencyjne ceny, które odzwierciedlają realną wartość Twojego mieszkania, 
+              uwzględniając jednocześnie szybkość i wygodę transakcji.
+            </p>
+            
+            <h3 className="text-xl font-semibold mb-4 text-[var(--text-black)]">Proces skupu mieszkania krok po kroku:</h3>
+            <ol className="list-decimal pl-6 space-y-4">
+              <li>
+                <strong>Kontakt i wstępna wycena</strong> - skontaktuj się z nami telefonicznie lub wypełnij formularz na naszej stronie. 
+                Podaj podstawowe informacje o mieszkaniu i dołącz zdjęcia, jeśli to możliwe.
+              </li>
+              <li>
+                <strong>Oględziny mieszkania</strong> - w dogodnym dla Ciebie terminie nasz przedstawiciel odwiedzi Twoją nieruchomość, 
+                aby dokonać dokładnej oceny jej stanu i wartości.
+              </li>
+              <li>
+                <strong>Przedstawienie oferty</strong> - po oględzinach przedstawimy Ci ostateczną ofertę zakupu. Nasza propozycja 
+                jest zawsze uczciwa i uwzględnia wszystkie aspekty nieruchomości.
+              </li>
+              <li>
+                <strong>Podpisanie umowy i wypłata gotówki</strong> - jeśli akceptujesz naszą ofertę, umawiamy się na podpisanie umowy 
+                u notariusza. Płatność otrzymujesz od razu po podpisaniu umowy - gotówką lub przelewem, według Twojego wyboru.
+              </li>
+            </ol>
+            
+            <p className="leading-relaxed mt-6">
+              Cały proces od pierwszego kontaktu do finalizacji transakcji może trwać zaledwie kilka dni. Nie musisz martwić się 
+              o żadne formalności - zajmujemy się wszystkimi dokumentami i procedurami. Skontaktuj się z nami już dziś i przekonaj się, 
+              jak szybko i bezproblemowo możesz sprzedać swoje mieszkanie! Zadzwoń: 
+              <a href="tel:+48530190880" className="text-[var(--button-primary)] hover:text-[var(--button-hover)] font-semibold transition-colors">
+                +48 530 190 880
+              </a>
             </p>
             
             <h3 className="text-xl font-semibold mb-4 text-[var(--text-black)]">Procedura wyceny w naszym biurze skupu:</h3>
@@ -64,8 +91,8 @@ const Text_2 = () => {
             </ol>
             
             <p className="leading-relaxed mt-6">
-              Jeżeli nie potrzebujesz wyceny przygotowanej przez rzeczoznawcę i potrzebujesz jej do celów prywatnych, np. do sprzedaży, 
-              to możesz skorzystać z usług naszego biura skupu nieruchomości. Zapraszamy już dziś! Zadzwoń: 
+              Jeżeli potrzebujesz szybko sprzedać swoje mieszkanie i zależy Ci na bezproblemowej transakcji, 
+              to skorzystaj z usług naszego biura skupu mieszkań. Zapraszamy już dziś! Zadzwoń: 
               <a href="tel:+48530190880" className="text-[var(--button-primary)] hover:text-[var(--button-hover)] font-semibold transition-colors">
                 +48 530 190 880
               </a>

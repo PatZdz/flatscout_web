@@ -16,9 +16,7 @@ export const metadata: Metadata = {
 const PropertyValuationPage = () => {
   return (
     <main className="w-full bg-[var(--background-base)]">
-      <Header 
-        title="Skup nieruchomości spadkowych" 
-      />
+      <Header />
       <Description />
       <Text_1 />
       <Text_2 />

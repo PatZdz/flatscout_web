@@ -6,7 +6,7 @@ const Text_1 = () => {
       <div className="container mx-auto px-4">
         <header className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-black)] mb-4">
-            Wycena nieruchomości przez rzeczoznawcę
+            Dlaczego warto skorzystać z usługi skupu mieszkań?
           </h2>
           <div className="w-16 h-1 bg-[var(--button-primary)] mx-auto mb-6"></div>
         </header>
@@ -14,40 +14,36 @@ const Text_1 = () => {
         <div className="max-w-5xl mx-auto space-y-6 text-[var(--text-gray)]" itemScope itemType="https://schema.org/Article">
           <div itemProp="articleBody">
             <p className="leading-relaxed mb-6">
-              W niektórych sytuacjach musimy skorzystać z usług rzeczoznawcy. Rzeczoznawca majątkowy jest to osoba, która nabyła odpowiednie uprawnienia. 
-              Wycena przygotowana przez rzeczoznawcę, nazywana jest operatem szacunkowym. Będzie potrzebna w przypadku przekazania darowizny, spadku, 
-              starania się o kredyt hipoteczny, amortyzacji lokalu i zeznania majątkowego.
-            </p>
-
-            <p className="leading-relaxed mb-6">
-              Operat szacunkowy jest dokumentem urzędowym, który możemy przedłożyć w urzędzie skarbowym czy w sądzie. Musi mieć bezwzględnie formę 
-              pisemną i zawierać precyzyjne obliczenia, dokładny opis nieruchomości i zdjęcia. Rzeczoznawca musi umieścić w dokumencie informację 
-              o podstawach prawnych i metodzie, jaka była zastosowana w celu przygotowania wyceny.
+              Sprzedaż mieszkania na tradycyjnym rynku nieruchomości może być długotrwałym i skomplikowanym procesem. 
+              Wymaga przygotowania nieruchomości do prezentacji, organizowania pokazów, negocjacji z potencjalnymi 
+              nabywcami oraz załatwiania licznych formalności. Skup mieszkań to alternatywne rozwiązanie, które 
+              eliminuje te problemy i oferuje szereg korzyści.
             </p>
 
             <div className="mb-6">
-              <h3 className="text-xl font-semibold mb-4 text-[var(--text-black)]">Elementy operatu szacunkowego:</h3>
+              <h3 className="text-xl font-semibold mb-4 text-[var(--text-black)]">Główne zalety skorzystania z usługi skupu mieszkań:</h3>
               <ul className="list-disc list-inside space-y-2">
-                <li>wskazanie nieruchomości i zakresu wyceny</li>
-                <li>cel przygotowania operatu szacunkowego</li>
-                <li>źródła, z którego pozyskano informacje o nieruchomości</li>
-                <li>podstawa formalna</li>
-                <li>szczegółowy opis stanu technicznego nieruchomości</li>
-                <li>podanie przeznaczenia nieruchomości, który wynika z planu zagospodarowania przestrzeni</li>
-                <li>analiza rynku nieruchomości, która jest konieczna do sporządzenia dokumentu</li>
-                <li>opis zastosowanej metody oraz techniki szacowania</li>
+                <li>Szybka transakcja - sprzedaż mieszkania nawet w ciągu kilku dni</li>
+                <li>Płatność gotówką - natychmiastowy dostęp do środków</li>
+                <li>Brak konieczności przygotowania mieszkania do sprzedaży</li>
+                <li>Kupujemy mieszkania w każdym stanie technicznym</li>
+                <li>Brak prowizji i ukrytych kosztów</li>
+                <li>Minimum formalności - zajmujemy się wszystkimi dokumentami</li>
+                <li>Bezpieczeństwo transakcji - gwarancja zapłaty</li>
+                <li>Możliwość sprzedaży mieszkania z obciążeniami (hipoteka, zadłużenie)</li>
               </ul>
             </div>
 
             <p className="leading-relaxed mb-6">
-              Usługi rzeczoznawcy majątkowego nie są niestety tanie. Koszt rzeczoznawcy zależy od rodzaju i lokalizacji nieruchomości. 
-              Przykładowo za wycenę mieszkania zapłacimy około 500-600 zł netto, za dom będziemy musieli zapłacić nawet ponad 1000 zł. 
-              Za wycenę dużych nieruchomości, jak kamienica (tak, prowadzimy również skup kamienic) możemy zapłacić nawet kilka tysięcy zł.
+              Nasza firma specjalizuje się w skupie mieszkań o różnorodnym charakterze - od małych kawalerek po duże apartamenty, 
+              w różnych lokalizacjach i o różnym standardzie. Kupujemy mieszkania zarówno w dobrym stanie technicznym, jak i te 
+              wymagające remontu czy modernizacji. Nie stanowią dla nas przeszkody również problemy prawne, takie jak nieuregulowany 
+              stan prawny, brak księgi wieczystej czy zadłużenie.
             </p>
 
             <p className="leading-relaxed">
-              Operat szacunkowy jest ważny przez 12 miesięcy i można go użyć tylko do celu, który został w nim wskazany. 
-              Czy warto korzystać z usług rzeczoznawcy, gdy nie jest to konieczne? Sprawdź, jak wygląda wycena, gdy zlecisz ją np. do biura skupu nieruchomości.
+              Jeśli zależy Ci na szybkiej sprzedaży mieszkania bez zbędnych formalności i stresu, skup mieszkań 
+              jest idealnym rozwiązaniem. Skontaktuj się z nami, aby otrzymać bezpłatną wycenę i ofertę zakupu Twojego mieszkania.
             </p>
           </div>
         </div>

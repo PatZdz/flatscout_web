@@ -20,9 +20,7 @@ export const metadata: Metadata = {
 export default function PropertyValuationPage() {
   return (
     <main className="w-full bg-[var(--background-base)]">
-      <Header 
-        title="Skup nieruchomości z lokatorami. Kupimy mieszkanie z lokatorem" 
-      />
+      <Header />
       <Description />
       <Text_1 />
       <Text_2 />

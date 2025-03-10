@@ -7,11 +7,12 @@ const Description = () => {
         <div className="max-w-5xl mx-auto text-[var(--text-gray)]" itemScope itemType="https://schema.org/Article">
           <div itemProp="articleBody">
             <p className="leading-relaxed">
-              Profesjonalna wycena nieruchomości to kluczowy element procesu sprzedaży, który pozwala określić realną wartość
-              rynkową Twojej nieruchomości. Niezależnie od tego, czy planujesz sprzedać mieszkanie, dom czy działkę, dokładna
-              wycena pomoże Ci podjąć świadomą decyzję i uzyskać odpowiednią cenę. Nasza firma oferuje kompleksową usługę
-              wyceny, przeprowadzaną przez doświadczonych specjalistów, którzy uwzględniają wszystkie istotne czynniki
-              wpływające na wartość nieruchomości.
+              Skup mieszkań to usługa, która umożliwia szybką i bezproblemową sprzedaż Twojego mieszkania za gotówkę. 
+              Niezależnie od stanu technicznego, lokalizacji czy sytuacji prawnej nieruchomości, oferujemy uczciwe 
+              warunki i konkurencyjne ceny. Nasza firma specjalizuje się w skupie mieszkań na terenie całej Polski, 
+              zapewniając profesjonalną obsługę, minimum formalności i szybką realizację transakcji. Jeśli zależy Ci 
+              na czasie lub chcesz uniknąć długotrwałego procesu sprzedaży na rynku wtórnym, skup mieszkań jest 
+              idealnym rozwiązaniem dla Ciebie.
             </p>
           </div>
         </div>

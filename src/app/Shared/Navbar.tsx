@@ -77,7 +77,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <div className="relative h-10 w-48">
             <Image 
-              src="/vectors/flatscout_logo.svg" 
+              src="/vectors/flatscout_logo.png" 
               alt="Towarzystwo Mieszkaniowe" 
               fill
               className="object-contain"

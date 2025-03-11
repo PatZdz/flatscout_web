@@ -3,7 +3,7 @@ import BlogGrid from './BlogGrid';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog - FlatScout',
+  title: 'Blog',
   description: 'Artykuły i porady dotyczące rynku nieruchomości w Polsce',
 };
 

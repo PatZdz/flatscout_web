@@ -1,4 +1,3 @@
-// Przykładowe dane na wypadek błędu lub braku danych w Notion
 const fallbackPosts = [
     {
       id: 1,

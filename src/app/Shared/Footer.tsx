@@ -16,7 +16,7 @@ const Footer = () => {
             <Link href="/" className="mb-4 inline-block">
               <div className="relative h-10 w-48">
                 <Image 
-                  src="/vectors/flatscout_logo.svg" 
+                  src="/vectors/flatscout_logo.png" 
                   alt="FlatScout" 
                   fill
                   className="object-contain"
@@ -33,7 +33,7 @@ const Footer = () => {
               </a>
               <a href="mailto:kontakt@flatscout.pl" className="flex items-center text-[var(--text-gray)] hover:text-[var(--button-primary)] transition-colors">
                 <FaEnvelope className="mr-2" />
-                kontakt@flatscout.pl
+                kontakt@towarzystwomieszkaniowe.pl
               </a>
             </div>
           </div>

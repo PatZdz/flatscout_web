@@ -13,8 +13,8 @@
   --foreground: #171717;          /* Podstawowy kolor tekstu */
   
   /* Kolory przycisków */
-  --button-primary: #00A53D;
-  --button-hover: #008236;
+  --button-primary: #8c53fe;
+  --button-hover: #6a3cc7;
   
   /* Kolory tekstu */
   --text-black: #101010;
@@ -22,7 +22,7 @@
   --text-light-gray: #a3a3a3;
   
   /* Kolory ikon */
-  --icon-bg: rgba(0, 165, 61, 0.1); /* Tło dla ikon */
+  --icon-bg: #e6def9; /* Tło dla ikon */
 }
 
 

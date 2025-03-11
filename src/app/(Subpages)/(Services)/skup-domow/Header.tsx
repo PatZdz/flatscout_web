@@ -1,36 +1,26 @@
 import React from 'react';
-import Image from 'next/image';
 
 interface HeaderProps {
-  title?: string;
-  subtitle?: string;
+  title?: string;  // Keep the interface but use the prop
 }
 
-const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
+const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <div className="w-full relative">
-      {/* Header background image */}
       <div className="w-full h-[300px] md:h-[400px] relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10"></div>
-        <Image 
+        <img 
           src="/images/skup.webp" 
           alt="O nas - FlatScout" 
-          fill
-          className="object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
       
-      {/* Centered text overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
         <div className="text-center px-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-            Skup domów - szybka wycena i uczciwa cena
+            {title || "Skup domów"}
           </h1>
-          {subtitle && (
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-              {subtitle}
-            </p>
-          )}
         </div>
       </div>
     </div>

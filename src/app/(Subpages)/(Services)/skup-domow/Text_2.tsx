@@ -35,9 +35,7 @@ const Text_2 = () => {
             </div>
             
             <p className="leading-relaxed mb-6">
-              Jeżeli zdecydujesz się wysłać do nas zgłoszenie, to wycenimy Twoje mieszkanie za darmo. Nasze wszystkie usługi są bezpłatne. 
-              Wycena, którą przygotujemy, będzie rzetelna i dokładna, ponieważ mamy dużą wiedzę na temat sytuacji na polskim i lokalnym 
-              rynku nieruchomości, wiemy jakie elementy wpływają na wycenę oraz mamy dostęp do cen transakcyjnych.
+              Nasza wycena jest zawsze bezpłatna i niezobowiązująca. Dzięki doświadczeniu i znajomości rynku nieruchomości, jesteśmy w stanie zaoferować konkurencyjne ceny, które odzwierciedlają realną wartość Twojego domu, uwzględniając jednocześnie szybkość i wygodę transakcji.
             </p>
             
             <h3 className="text-xl font-semibold mb-4 text-[var(--text-black)]">Procedura wyceny w naszym biurze skupu:</h3>

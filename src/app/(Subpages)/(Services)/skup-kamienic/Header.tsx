@@ -14,9 +14,10 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10"></div>
         <Image 
           src="/images/skup.webp" 
-          alt="O nas - FlatScout" 
+          alt="Skup kamienic - FlatScout" 
           fill
           className="object-cover"
+          priority
         />
       </div>
       

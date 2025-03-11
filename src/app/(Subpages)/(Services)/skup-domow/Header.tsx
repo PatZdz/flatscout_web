@@ -1,7 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface HeaderProps {
-  title?: string;  // Keep the interface but use the prop
+  title?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
@@ -9,10 +10,12 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     <div className="w-full relative">
       <div className="w-full h-[300px] md:h-[400px] relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10"></div>
-        <img 
+        <Image 
           src="/images/skup.webp" 
-          alt="O nas - FlatScout" 
-          className="w-full h-full object-cover"
+          alt="Skup domów - FlatScout" 
+          fill
+          className="object-cover"
+          priority
         />
       </div>
       

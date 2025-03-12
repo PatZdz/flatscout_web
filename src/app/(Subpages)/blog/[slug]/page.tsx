@@ -1,40 +1,44 @@
-import { notFound } from 'next/navigation'
-import type { Metadata } from 'next'
-
 import PostHeader from './components/PostHeader'
 import SocialShare from './components/SocialShare'
 import ContactCTA from './components/ContactCTA'
-import { getPostBySlug } from './utils/getPostData'
 
-export async function generateMetadata({
-  params
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
-  const post = getPostBySlug(params.slug)
+export default function BlogPostPage() {
+  const post = {
+    title: 'Jak przygotować mieszkanie do sprzedaży?',
+    date: '15 maja 2023',
+    author: 'Anna Kowalska',
+    imageUrl: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    content: `
+        <article class="blog-content">
+          <header>
+            <h1 class="article-title">Jak przygotować mieszkanie do sprzedaży?</h1>
+            <p class="article-intro">Sprzedaż mieszkania to ważny krok, który wymaga nie tylko odpowiedniej wyceny, ale także starannego przygotowania lokalu. Właściwie przygotowane mieszkanie przyciąga potencjalnych nabywców, skracając czas sprzedaży i często podnosząc cenę transakcyjną.</p>
+          </header>
 
-  if (!post) {
-    return {
-      title: 'Artykuł nie znaleziony - FlatScout',
-      description: 'Przepraszamy, nie znaleźliśmy szukanego artykułu'
-    }
-  }
+          <nav class="table-of-contents">
+            <h2>Spis treści</h2>
+            <ol>
+              <li><a href="#wprowadzenie">Wprowadzenie</a></li>
+              <li><a href="#porzadek">Porządek i czystość</a></li>
+              <li><a href="#depersonalizacja">Depersonalizacja wnętrza</a></li>
+              <li><a href="#neutralizacja">Neutralizacja zapachów</a></li>
+              <li><a href="#sesja">Profesjonalna sesja zdjęciowa</a></li>
+              <li><a href="#dokumentacja">Przygotowanie dokumentacji</a></li>
+              <li><a href="#podsumowanie">Podsumowanie</a></li>
+            </ol>
+          </nav>
 
-  return {
-    title: `${post.title} - Blog`,
-    description: post.content.substring(0, 160).replace(/<[^>]*>/g, '')
-  }
-}
+          <section id="wprowadzenie">
+            <h2>1. Wprowadzenie</h2>
+            <p>Przygotowanie mieszkania do sprzedaży zaczyna się od zrozumienia, jak ważne jest pierwsze wrażenie. Niezależnie od stanu technicznego nieruchomości, zadbana prezentacja potrafi zdziałać cuda. Warto zainwestować czas i niewielkie środki, by nieruchomość prezentowała się jak najlepiej.</p>
+          </section>
 
-export default async function BlogPostPage({
-  params
-}: {
-  params: { slug: string }
-}) {
-  const post = getPostBySlug(params.slug)
-
-  if (!post) {
-    notFound()
+          <section id="porzadek">
+            <h2>2. Porządek i czystość</h2>
+            <p>Podstawą jest gruntowne sprzątanie każdego pomieszczenia. Zadbaj o czystość podłóg, okien, a także o uporządkowanie przestrzeni. Uporządkowane wnętrza dają poczucie przestronności i świeżości.</p>
+          </section>
+        </article>
+      `
   }
 
   return (

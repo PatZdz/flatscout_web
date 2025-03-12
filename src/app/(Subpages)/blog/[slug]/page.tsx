@@ -12,11 +12,13 @@ import { getPostBySlug } from './utils/getPostData';
 
 // Funkcja do pobierania posta została przeniesiona do utils/getPostData.ts
 
-// Definicja typów zgodna z wymaganiami Next.js
-type Params = { slug: string }
-type PageProps = { params: Params }
+// Usuwamy własne definicje typów i używamy typów zgodnych z Next.js
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: { slug: string } 
+}): Promise<Metadata> {
   // Pobierz post z Notion lub użyj danych zapasowych
   const post = getPostBySlug(params.slug);
   
@@ -33,7 +35,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
+// Używamy bezpośrednio typów inline zamiast własnych definicji
+export default async function BlogPostPage({ 
+  params 
+}: { 
+  params: { slug: string } 
+}) {
   // Pobierz post z Notion lub użyj danych zapasowych
   const post = getPostBySlug(params.slug);
   

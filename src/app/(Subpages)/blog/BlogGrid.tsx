@@ -62,33 +62,16 @@ const previewPosts = [
   },
 ];
 
+// Use a subset of the data for the blog grid preview
+const posts = previewPosts;
+
 const BlogGrid = () => {
-  // Use the fallbackPosts data from the article pages
-  const posts = fallbackPosts;
-  
   return (
-    <section className="py-16 bg-[var(--background-base)]">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
-        </div>
-        
-        {/* Pagination component could be added here */}
-        <div className="mt-12 flex justify-center">
-          <button className="mx-1 px-4 py-2 rounded-md bg-[var(--background-secondary)] text-[var(--text-gray)] hover:bg-[var(--button-primary)] hover:text-white transition-colors">
-            1
-          </button>
-          <button className="mx-1 px-4 py-2 rounded-md bg-[var(--background-secondary)] text-[var(--text-gray)] hover:bg-[var(--button-primary)] hover:text-white transition-colors">
-            2
-          </button>
-          <button className="mx-1 px-4 py-2 rounded-md bg-[var(--background-secondary)] text-[var(--text-gray)] hover:bg-[var(--button-primary)] hover:text-white transition-colors">
-            3
-          </button>
-        </div>
-      </div>
-    </section>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <BlogCard key={post.id} {...post} />
+      ))}
+    </div>
   );
 };
 

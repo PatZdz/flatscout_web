@@ -19,7 +19,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
-    <article className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+    <article className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 max-w-sm mx-auto h-full flex flex-col">
       <div className="relative h-48 w-full">
         {post.imageUrl ? (
           <Image 
@@ -36,19 +36,21 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
         )}
       </div>
       
-      <div className="p-6">
-        <span className="text-sm text-[var(--text-light-gray)] block mb-2">{post.date}</span>
-        <h3 className="text-xl font-bold text-[var(--text-black)] mb-3 hover:text-[var(--button-primary)] transition-colors">
-          <Link href={`/blog/${post.slug}`} className="hover:underline">
-            {post.title}
-          </Link>
-        </h3>
-        <p className="text-[var(--text-gray)] mb-4">
-          {post.excerpt || (post.content && post.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...')}
-        </p>
+      <div className="p-6 flex-grow flex flex-col justify-between">
+        <div>
+          <span className="text-sm text-[var(--text-light-gray)] block mb-2">{post.date}</span>
+          <h3 className="text-xl font-bold text-[var(--text-black)] mb-3 hover:text-[var(--button-primary)] transition-colors">
+            <Link href={`/blog/${post.slug}`} className="hover:underline">
+              {post.title}
+            </Link>
+          </h3>
+          <p className="text-[var(--text-gray)] mb-4">
+            {post.excerpt || (post.content && post.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...')}
+          </p>
+        </div>
         <Link 
           href={`/blog/${post.slug}`}
-          className="inline-flex items-center text-[var(--button-primary)] hover:text-[var(--button-hover)] font-medium transition-colors"
+          className="inline-flex items-center text-[var(--button-primary)] hover:text-[var(--button-hover)] font-medium transition-colors mt-auto"
         >
           Czytaj więcej
           <svg 

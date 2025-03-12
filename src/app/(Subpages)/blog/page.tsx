@@ -13,7 +13,7 @@ export default function BlogPage() {
       <section className="w-full py-16 bg-[var(--background-secondary)]">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-black)] mb-4 text-center">
-            Blog FlatScout
+            Blog
           </h1>
           <p className="text-lg text-[var(--text-gray)] max-w-3xl mx-auto text-center mb-8">
             Najnowsze artykuły, porady i informacje dotyczące rynku nieruchomości w Polsce

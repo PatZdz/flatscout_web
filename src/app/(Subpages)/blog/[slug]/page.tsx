@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
   
   return {
-    title: `${post.title} - FlatScout Blog`,
+    title: `${post.title} - Blog`,
     description: post.content.substring(0, 160).replace(/<[^>]*>/g, ''),
   };
 }

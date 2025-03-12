@@ -18,7 +18,7 @@ const PrivacyPolicyPage = () => {
               Niniejsza Polityka Prywatności określa sposób pozyskiwania, przetwarzania oraz zabezpieczania danych osobowych w rozumieniu ustawy o ochronie danych osobowych z dnia 29 sierpnia 1997 roku (Dz.U. Nr 133, poz. 883 z póź. zm.) oraz ustawą o świadczeniu usług drogą elektroniczną z dnia 18 lipca 2002 r. (Dz.U. Nr 144, poz. 1204 z póź. zm.) oraz z art. 13 ust. 1 i ust. 2 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)
             </p>
             <p className="text-[var(--text-gray)]">
-              Właścicielem strony internetowej www.odkupimymieszkanie.com oraz administratorem danych osobowych jest firma SEZARO Sp. z o.o., z siedzibą w Świebodzicach, 58-160, przy ul. Piłsudskiego 31c, , NIP 8842810985, REGON 521143851, telefon: 530 235 962, wpisana do Krajowego Rejestru Sądowego pod numerem 0000949519
+              Właścicielem strony internetowej www.towarzystwomieszkaniowe.com oraz administratorem danych osobowych jest firma SEZARO Sp. z o.o., z siedzibą w Świebodzicach, 58-160, przy ul. Piłsudskiego 31c, , NIP 8842810985, REGON 521143851, telefon: 530 235 962, wpisana do Krajowego Rejestru Sądowego pod numerem 0000949519
             </p>
           </section>
 
@@ -99,7 +99,7 @@ const PrivacyPolicyPage = () => {
             <ol className="list-decimal pl-6 text-[var(--text-gray)] space-y-4">
               <li>
                 <p className="text-[var(--text-gray)]">Właścicielem strony internetowej, działającej pod adresem internetowym:</p>
-                <p className="text-[var(--text-gray)] mt-2">www.odkupimymieszkanie.com jest firma SEZARO Sp. z o.o. (zwana dalej Właścicielem) z siedzibą w Świebodzicach 58-160, Piłsudskiego 31c, NIP 8842810985, REGON 521143851, telefon: 530 235 962, wpisana do Krajowego Rejestru Sądowego pod numerem 0000949519.</p>
+                <p className="text-[var(--text-gray)] mt-2">www.towarzystwomieszkaniowe.pl jest firma SEZARO Sp. z o.o. (zwana dalej Właścicielem) z siedzibą w Świebodzicach 58-160, Piłsudskiego 31c, NIP 8842810985, REGON 521143851, telefon: 530 235 962, wpisana do Krajowego Rejestru Sądowego pod numerem 0000949519.</p>
               </li>
               <li>
                 <p className="text-[var(--text-gray)]">Niniejszy regulamin (zwany dalej „Regulaminem") określa zasady korzystania ze strony internetowej www.odkupimymieszkanie.com zwanej dalej „Stroną internetową".</p>

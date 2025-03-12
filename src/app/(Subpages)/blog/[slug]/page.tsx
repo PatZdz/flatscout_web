@@ -12,11 +12,11 @@ import { getPostBySlug } from './utils/getPostData';
 
 // Funkcja do pobierania posta została przeniesiona do utils/getPostData.ts
 
-type Props = {
-  params: { slug: string }
+type Params = {
+  slug: string
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   // Pobierz post z Notion lub użyj danych zapasowych
   const post = getPostBySlug(params.slug);
   
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: { params: Params }) {
   // Pobierz post z Notion lub użyj danych zapasowych
   const post = getPostBySlug(params.slug);
   

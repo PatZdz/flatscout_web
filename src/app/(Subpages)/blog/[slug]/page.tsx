@@ -6,18 +6,10 @@ import SocialShare from './components/SocialShare'
 import ContactCTA from './components/ContactCTA'
 import { getPostBySlug } from './utils/getPostData'
 
-// Usuń/zakomentuj dotychczasowe PageProps:
-// interface PageProps {
-//   params: { slug: string }
-//   searchParams: Record<string, string | string[] | undefined>
-// }
-
 export async function generateMetadata({
-  params,
-  searchParams
+  params
 }: {
   params: { slug: string }
-  searchParams: Record<string, string | string[] | undefined>
 }): Promise<Metadata> {
   const post = getPostBySlug(params.slug)
 
@@ -35,11 +27,9 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({
-  params,
-  searchParams
+  params
 }: {
   params: { slug: string }
-  searchParams: Record<string, string | string[] | undefined>
 }) {
   const post = getPostBySlug(params.slug)
 

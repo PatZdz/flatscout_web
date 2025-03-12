@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
-export default async function BlogPostPage({ params }: { params: Params }) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   // Pobierz post z Notion lub użyj danych zapasowych
   const post = getPostBySlug(params.slug);
   

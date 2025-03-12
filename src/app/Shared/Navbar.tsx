@@ -54,7 +54,7 @@ const Navbar = () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }
-  }, [lastScrollY, isMenuOpen, isServicesMenuOpen]);
+  }, [lastScrollY, isMenuOpen, isServicesMenuOpen, controlNavbar]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

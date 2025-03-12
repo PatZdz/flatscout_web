@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface HeaderProps {
   title: string;
@@ -11,10 +12,12 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
       {/* Header background image */}
       <div className="w-full h-[300px] md:h-[400px] relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10"></div>
-        <img 
+        <Image 
           src="/images/kontakt.webp" 
           alt="Kontakt - FlatScout" 
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
       

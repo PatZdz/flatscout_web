@@ -26,7 +26,7 @@ const Text_2 = () => {
                 <li>przeznaczenie nieruchomości</li>
                 <li>powierzchnia użytkowa</li>
                 <li>standard wykończenia</li>
-                <li>stan techniczny lokalu, czy np. konieczny jest generalny remont, czy wystarczy home staging i delikatny „lifting" mieszkania</li>
+                <li>stan techniczny lokalu, czy np. konieczny jest generalny remont, czy wystarczy home staging i delikatny &ldquo;lifting&rdquo; mieszkania</li>
                 <li>aktualna sytuacja na rynku nieruchomości</li>
                 <li>plany zagospodarowania przestrzennego okolicy</li>
                 <li>stan prawny nieruchomości, np. mieszkanie z księgą wieczystą lub bez księgi, prawo dożywocia</li>

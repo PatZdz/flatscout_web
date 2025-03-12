@@ -69,6 +69,26 @@ const Testimonials = () => {
         </header>
 
         <div className="max-w-6xl mx-auto relative px-16">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-[var(--text-gray)] hover:text-[var(--button-primary)]"
+            aria-label="Previous slide"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-[var(--text-gray)] hover:text-[var(--button-primary)]"
+            aria-label="Next slide"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {getVisibleTestimonials().map((testimonial, index) => (
@@ -78,7 +98,7 @@ const Testimonials = () => {
               >
                 <div className="mb-6">
                   <p className="text-[var(--text-gray)] text-lg italic leading-relaxed" itemProp="reviewBody">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                 </div>
                 <div className="flex items-center">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface HeaderProps {
   title?: string;
@@ -11,10 +12,12 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
       {/* Header background image */}
       <div className="w-full h-[300px] md:h-[400px] relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10"></div>
-        <img 
+        <Image 
           src="/images/skup.webp" 
-          alt="O nas - FlatScout" 
-          className="w-full h-full object-cover"
+          alt="Skup nieruchomości z lokatorami - FlatScout" 
+          fill
+          className="object-cover"
+          priority
         />
       </div>
       
@@ -22,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
       <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
         <div className="text-center px-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-            Skup nieruchomości z lokatorami. Kupimy mieszkanie z lokatorem
+            {title || "Skup nieruchomości z lokatorami. Kupimy mieszkanie z lokatorem"}
           </h1>
           {subtitle && (
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">

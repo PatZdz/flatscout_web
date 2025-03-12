@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
       <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
         <div className="text-center px-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-            Skup nieruchomości komercyjnych
+            {title || "Skup nieruchomości komercyjnych"}
           </h1>
           {subtitle && (
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">

@@ -6,17 +6,11 @@ import SocialShare from './components/SocialShare'
 import ContactCTA from './components/ContactCTA'
 import { getPostBySlug } from './utils/getPostData'
 
-// 1. Definiujemy lokalny typ, jaki faktycznie chcemy mieć dla `params`.
-type BlogPageProps = {
-  params: {
-    slug: string
-  }
-}
-
-// 2. Stosujemy go w generateMetadata:
 export async function generateMetadata({
   params
-}: BlogPageProps): Promise<Metadata> {
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
   const post = getPostBySlug(params.slug)
 
   if (!post) {
@@ -32,8 +26,11 @@ export async function generateMetadata({
   }
 }
 
-// 3. I w samej stronie:
-export default async function BlogPostPage({ params }: BlogPageProps) {
+export default async function BlogPostPage({
+  params
+}: {
+  params: { slug: string }
+}) {
   const post = getPostBySlug(params.slug)
 
   if (!post) {
@@ -66,7 +63,6 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           />
 
           <SocialShare />
-
           <ContactCTA />
         </div>
       </article>

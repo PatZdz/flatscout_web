@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,29 +10,27 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
 
-  const controlNavbar = () => {
-    if (typeof window !== 'undefined') {
-      const currentScrollY = window.scrollY;
-      
-      // Zawsze pokazuj navbar na górze strony
-      if (currentScrollY < 10) {
-        setIsVisible(true);
-      } else {
-        // Ukryj przy scrollowaniu w dół, pokaż przy scrollowaniu w górę
-        setIsVisible(currentScrollY < lastScrollY);
-      }
-      
-      // Zamknij menu mobilne przy scrollowaniu
-      if (isMenuOpen && Math.abs(currentScrollY - lastScrollY) > 10) {
-        setIsMenuOpen(false);
-      }
-      
-      setLastScrollY(currentScrollY);
-    }
-  };
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const controlNavbar = () => {
+        const currentScrollY = window.scrollY;
+        
+        // Zawsze pokazuj navbar na górze strony
+        if (currentScrollY < 10) {
+          setIsVisible(true);
+        } else {
+          // Ukryj przy scrollowaniu w dół, pokaż przy scrollowaniu w górę
+          setIsVisible(currentScrollY < lastScrollY);
+        }
+        
+        // Zamknij menu mobilne przy scrollowaniu
+        if (isMenuOpen && Math.abs(currentScrollY - lastScrollY) > 10) {
+          setIsMenuOpen(false);
+        }
+        
+        setLastScrollY(currentScrollY);
+      };
+      
       window.addEventListener('scroll', controlNavbar);
       
       // Close services menu when clicking outside
@@ -54,7 +52,7 @@ const Navbar = () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }
-  }, [lastScrollY, isMenuOpen, isServicesMenuOpen, controlNavbar]);
+  }, [lastScrollY, isMenuOpen, isServicesMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

@@ -1,66 +1,58 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 
-// Import components
-import PostHeader from './components/PostHeader';
-import SocialShare from './components/SocialShare';
-import ContactCTA from './components/ContactCTA';
+import PostHeader from './components/PostHeader'
+import SocialShare from './components/SocialShare'
+import ContactCTA from './components/ContactCTA'
+import { getPostBySlug } from './utils/getPostData'
 
-// Import utilities
-import { getPostBySlug } from './utils/getPostData';
+// 1. Definiujemy lokalny typ, jaki faktycznie chcemy mieć dla `params`.
+type BlogPageProps = {
+  params: {
+    slug: string
+  }
+}
 
-// Funkcja do pobierania posta została przeniesiona do utils/getPostData.ts
+// 2. Stosujemy go w generateMetadata:
+export async function generateMetadata({
+  params
+}: BlogPageProps): Promise<Metadata> {
+  const post = getPostBySlug(params.slug)
 
-// Usuwamy własne definicje typów i używamy typów zgodnych z Next.js
-
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: { slug: string } 
-}): Promise<Metadata> {
-  // Pobierz post z Notion lub użyj danych zapasowych
-  const post = getPostBySlug(params.slug);
-  
   if (!post) {
     return {
       title: 'Artykuł nie znaleziony - FlatScout',
-      description: 'Przepraszamy, nie znaleźliśmy szukanego artykułu',
-    };
+      description: 'Przepraszamy, nie znaleźliśmy szukanego artykułu'
+    }
   }
-  
+
   return {
     title: `${post.title} - Blog`,
-    description: post.content.substring(0, 160).replace(/<[^>]*>/g, ''),
-  };
+    description: post.content.substring(0, 160).replace(/<[^>]*>/g, '')
+  }
 }
 
-// Używamy bezpośrednio typów inline zamiast własnych definicji
-export default async function BlogPostPage({ 
-  params 
-}: { 
-  params: { slug: string } 
-}) {
-  // Pobierz post z Notion lub użyj danych zapasowych
-  const post = getPostBySlug(params.slug);
-  
+// 3. I w samej stronie:
+export default async function BlogPostPage({ params }: BlogPageProps) {
+  const post = getPostBySlug(params.slug)
+
   if (!post) {
-    notFound();
+    notFound()
   }
-  
+
   return (
     <main className="min-h-screen bg-[var(--background-base)]">
       <article className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <PostHeader 
+          <PostHeader
             title={post.title}
             date={post.date}
             author={post.author}
             imageUrl={post.imageUrl}
           />
-          
-          <div 
-            className="prose prose-lg max-w-none 
+
+          <div
+            className="prose prose-lg max-w-none
               prose-headings:font-bold
               prose-h1:text-4xl prose-h1:mb-8 
               prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
@@ -72,12 +64,12 @@ export default async function BlogPostPage({
               prose-img:rounded-lg prose-img:my-8"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-          
+
           <SocialShare />
-          
+
           <ContactCTA />
         </div>
       </article>
     </main>
-  );
+  )
 }
